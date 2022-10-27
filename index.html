@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+.flex-parent {
+      display: flex;
+      }
+      
+.jc-center {
+      justify-content: center;
+      }
+
+.button {
+  width: 200px;
+  color: white;
+  padding: 16px 32px 16px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: white; 
+  color: black; 
+  border: 3px solid #0a0f11;
+  margin: 4px;
+  
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(4, 2, 2);
+   color: white;
+   text-align: center;
+}
+
+
+#wlc_header{
+    text-align: center;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 5%;
+  width: 25%;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; R2S</span>
+<h2 id="wlc_header">Welcome to R2S system</h2>
+<p>Choose one of the following services</p>
+
+<div class="flex-parent jc-center">
+  <button class="button" type="submit">Medical</button><br>
+  </div>
+  <div class="flex-parent jc-center">
+  <button class="button" type="submit">Electronic</button>
+</div>
+<div class="flex-parent jc-center">
+<button class="button" type="submit">Mechanical</button>
+</div>
+<div class="flex-parent jc-center">
+<button class="button" type="submit">Others</button>
+</div>
+
+
+<div class="footer">
+  <p>Copywrite to R2S</p>
+</div>
+
+ 
+  
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "150px";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+     
+</body>
+</html>
