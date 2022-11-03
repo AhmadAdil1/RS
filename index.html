@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+.flex-parent {
+      display: flex;
+      }
+      
+.jc-center {
+      justify-content: center;
+      }
+
+.button {
+  width: 200px;
+  color: white;
+  padding: 16px 32px 16px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: white; 
+  color: black; 
+  border: 3px solid #0a0f11;
+  margin: 4px;
+  
+}
+.search-container{
+    float: none;
+    display: block;
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    /* margin-right: 20px; */
+    /* border: 1px solid #0a0f11; */
+    /* margin: 5px; */
+    margin-top: 11px;
+    /* margin-right: 11px; */
+    margin-left: -10px;
+  
+  } 
+  /* input[type=text] {
+  border: 1px solid #ccc;  
+  } */
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(4, 2, 2);
+   color: white;
+   text-align: center;
+}
+
+
+#wlc_header{
+    text-align: center;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 5%;
+  /* width: 30%; */
+  text-align: left;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+  <div class="overlay-content">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+    <a href="#">Add Service</a>
+  </div>
+</div>
+
+<div class="search-container">
+  <form action="/action_page.php">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; R2S</span> 
+<h2 id="wlc_header">Welcome to R2S system</h2>
+<p>Choose one of the following services</p>
+
+<div class="flex-parent jc-center">
+  <button class="button" type="submit">Medical</button><br>
+  </div>
+  <div class="flex-parent jc-center">
+  <button class="button" type="submit">Electronic</button>
+</div>
+<div class="flex-parent jc-center">
+<button class="button" type="submit">Mechanical</button>
+</div>
+<div class="flex-parent jc-center">
+<button class="button" type="submit">Others</button>
+</div>
+
+
+<div class="footer">
+  <p>Copywrite to R2S</p>
+</div>
+
+ 
+  
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "205px";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+     
+</body>
+</html>
