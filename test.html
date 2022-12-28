@@ -1,0 +1,61 @@
+<script>
+var LanguageList = {
+    "EN" : "English",
+    "KR" : "Kurdish",
+    "AR" : "Arabic"
+  };
+  
+  //languages Objects
+  var WORDS_EN = {
+    "text1" : "Hello",
+    "text2" : "How are you?"
+  };
+  
+  var WORDS_KR = {
+    "text1" : "سڵاو",
+    "text2" : "چۆنی؟"
+  };
+  
+  var WORDS_AR = {
+    "text1" : "مرحبا",
+    "text2" : "کیف حالک؟"
+  };
+  
+  
+  window.onload = initialize;
+  
+  function initialize() {
+    var $dropdown = $("#country_select");    
+    $.each(LanguageList, function(key, value) {
+      $dropdown.
+        append($("<option/>").
+        val(key).
+        text(value));
+      });
+      
+    loadsLanguage("EN");
+  }
+  
+  function loadsLanguage(lang){
+    /*fills all the span tags with class=lang pattern*/ 
+    $('span[class^="lang"]').each(function(){
+      var LangVar = (this.className).replace('lang-','');
+      var Text = window["WORDS_"+lang][LangVar];
+      $(this).text(Text);        
+    });
+  }
+</script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <select id="country_select" onchange="loadsLanguage(this.value);">
+  </select>
+  
+  <div>
+    <span class="lang-text1"></span>
+  </div>
+  <div>
+    <span class="lang-text2"></span>
+  </div>
+  <div>
+    <span class="lang-text2"></span>/<span class="lang-text2"></span>
+  </div>
